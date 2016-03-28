@@ -1,0 +1,15 @@
+service:
+  min-port: 20000
+  max-port: 21000
+
+zookeeper:
+  url: localhost
+  port: 2181
+
+mongo:
+  uri: mongodb://localhost:27017/aoc_aop?authSource=admin
+
+elastic-search:
+  url: 192.168.1.13
+  port: 9300
+  index: aoc_aop
