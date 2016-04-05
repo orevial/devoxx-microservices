@@ -1,13 +1,17 @@
 package fr.ippon.microservices.kpi.config;
 
-import fr.ippon.microservices.kpi.settings.ESSettings;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
+import javax.inject.Inject;
+
 import org.elasticsearch.client.Client;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.transport.InetSocketTransportAddress;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import javax.inject.Inject;
+import fr.ippon.microservices.kpi.settings.ESSettings;
 
 @Configuration
 public class KpiConfig {
@@ -16,7 +20,9 @@ public class KpiConfig {
     private ESSettings esSettings;
 
     @Bean
-    public Client getESClient() {
-        return new TransportClient().addTransportAddress(new InetSocketTransportAddress(esSettings.getUrl(), esSettings.getPort()));
+    public Client getESClient() throws UnknownHostException {
+    	return TransportClient.builder().build()
+    	        .addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName(esSettings.getUrl()),  esSettings.getPort()));
+    	
     }
 }
