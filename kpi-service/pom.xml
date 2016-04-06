@@ -7,20 +7,20 @@
 	<artifactId>kpi-service</artifactId>
 	<name>KPI service</name>
 	<description>A Spring Boot service that provides KPI for the overall services</description>
-	<version>1.0-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<version>1.0.0-SNAPSHOT</version>
+
+	<parent>
+		<groupId>fr.ippon.microservices</groupId>
+		<artifactId>services-parent</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
 
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-zookeeper-discovery</artifactId>
-			<version>1.0.0.RC1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-			<version>1.3.3.RELEASE</version>
-		</dependency>
+
 		<dependency>
 			<groupId>org.elasticsearch</groupId>
 			<artifactId>elasticsearch</artifactId>
@@ -29,24 +29,19 @@
 		<dependency>
 			<groupId>com.netflix.feign</groupId>
 			<artifactId>feign-core</artifactId>
-			<version>8.16.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.netflix.feign</groupId>
 			<artifactId>feign-jackson</artifactId>
-			<version>8.16.0</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.inject</groupId>
 			<artifactId>javax.inject</artifactId>
-			<version>1</version>
 		</dependency>
 
 	</dependencies>
 
-	<properties>
-		<java.version>1.8</java.version>
-	</properties>
+
 
 	<build>
 		<plugins>
