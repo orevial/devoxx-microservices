@@ -3,10 +3,12 @@ spring:
   cloud:
     zookeeper:
       connect-string: localhost:2181
+      discovery:
+        enabled: true
 
 server.port: 21001
 
-elastic-search:
+elasticsearch:
   url: localhost
   port: 9300
   index: aoc_aop
