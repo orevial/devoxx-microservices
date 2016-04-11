@@ -1,13 +1,11 @@
 package fr.ippon.microservices.kpi.service.feign;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
-import feign.Headers;
-import feign.RequestLine;
-
-@FeignClient("Loader")
+@FeignClient(name = "loader-service")
 public interface Loader {
-	@RequestLine("GET /nbIndexedDocuments")
-	@Headers("Content-Type: application/json")
+	@RequestMapping(name = "/nbIndexedDocuments", method = RequestMethod.GET, consumes = "application/json")
 	Integer getNbIndexedDocuments();
 }

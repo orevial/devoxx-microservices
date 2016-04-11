@@ -1,10 +1,10 @@
-service:
-  min-port: 20000
-  max-port: 21000
+spring:
+  application.name: kpi-service
+  cloud:
+    zookeeper:
+      connect-string: localhost:2181
 
-zookeeper:
-  url: localhost
-  port: 2181
+server.port: 21001
 
 elastic-search:
   url: localhost
