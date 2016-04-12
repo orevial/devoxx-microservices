@@ -5,7 +5,7 @@ $(document).ready(function() {
     });
 
     function launchSearch() {
-        var baseUrl = "/search/city";
+        var baseUrl = "/search/search/city";
         var city = $("#city").val();
         var fullUrl = baseUrl + "/" + city;
 
