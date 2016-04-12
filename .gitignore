@@ -22,5 +22,4 @@ discovery-service
 edge-server
 hello-service
 hello-zookeeper-service
-searcher-service
 zookeeper-utils

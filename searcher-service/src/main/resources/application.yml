@@ -1,0 +1,12 @@
+spring:
+  application.name: searcher-service
+  cloud:
+    zookeeper:
+      connect-string: localhost:2181
+
+server.port: 21002
+
+elastic-search:
+  url: localhost
+  port: 9300
+  index: aoc_aop
