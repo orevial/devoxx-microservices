@@ -8,8 +8,8 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @EnableFeignClients
 @ComponentScan("fr.ippon.microservices")
-public class Application {
+public class KpiApplication {
     public static void main(String[] args) throws Exception {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(KpiApplication.class, args);
     }
 }

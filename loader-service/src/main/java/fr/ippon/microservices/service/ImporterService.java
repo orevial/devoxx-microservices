@@ -67,7 +67,7 @@ public class ImporterService {
 
 				if (currentCommune == null || !previousCommune.getCi().equals(currentMongoCommuneAire.getCi())) {
 					currentCommune = new ESCommuneDocument(currentMongoCommuneAire.getArt(),
-							currentMongoCommuneAire.getCi(), currentMongoCommuneAire.getDepartement(),
+							currentMongoCommuneAire.getCi(), currentMongoCommuneAire.getDepartement().toLowerCase(),
 							currentMongoCommuneAire.getCommune());
 					if (previousCommune != null) {
 						commitPreviousCommune = true;

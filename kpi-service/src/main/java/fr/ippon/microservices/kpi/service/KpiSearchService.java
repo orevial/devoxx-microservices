@@ -2,12 +2,9 @@ package fr.ippon.microservices.kpi.service;
 
 import javax.inject.Inject;
 
-import org.elasticsearch.action.count.CountResponse;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.Client;
 import org.elasticsearch.index.query.QueryBuilders;
-import org.elasticsearch.search.SearchHit;
-import org.elasticsearch.search.SearchHits;
 import org.elasticsearch.search.aggregations.AggregationBuilders;
 import org.elasticsearch.search.aggregations.bucket.terms.Terms;
 import org.elasticsearch.search.aggregations.bucket.terms.Terms.Bucket;
@@ -26,9 +23,9 @@ public class KpiSearchService {
 
 	public long getNbImport() throws Exception {
 
-		CountResponse response = esClient.prepareCount(esSettings.getIndex()).execute().actionGet();
+		SearchResponse response = esClient.prepareSearch(esSettings.getIndex()).setSize(0).execute().actionGet();
 
-		return response.getCount();
+		return response.getHits().getTotalHits();
 	}
 
 	public long nbCommunes(String departement) throws Exception {

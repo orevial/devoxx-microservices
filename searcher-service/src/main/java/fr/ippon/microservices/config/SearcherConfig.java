@@ -14,7 +14,7 @@ import java.net.UnknownHostException;
 
 @Configuration
 @EnableDiscoveryClient
-public class Config {
+public class SearcherConfig {
 
     @Inject
     private ESSettings esSettings;
