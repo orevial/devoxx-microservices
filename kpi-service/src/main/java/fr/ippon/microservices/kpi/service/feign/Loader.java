@@ -6,6 +6,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @FeignClient(name = "loader-service")
 public interface Loader {
-	@RequestMapping(name = "/nbIndexedDocuments", method = RequestMethod.GET, consumes = "application/json")
+	@RequestMapping(value = "/nbIndexedDocuments", method = RequestMethod.GET, consumes = "application/json")
 	Integer getNbIndexedDocuments();
 }

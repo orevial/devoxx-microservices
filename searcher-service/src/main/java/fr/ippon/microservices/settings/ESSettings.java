@@ -4,7 +4,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 @Component
-@ConfigurationProperties(prefix = "elastic-search")
+@ConfigurationProperties(prefix = "elasticsearch")
 public class ESSettings {
 
     private String url;

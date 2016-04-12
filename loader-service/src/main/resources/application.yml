@@ -9,7 +9,7 @@ server.port: 21000
 mongo:
   uri: mongodb://localhost:27017/aoc_aop?authSource=admin
 
-elastic-search:
+elasticsearch:
   url: localhost
   port: 9300
   index: aoc_aop

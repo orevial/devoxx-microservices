@@ -6,7 +6,7 @@ spring:
 
 server.port: 21002
 
-elastic-search:
+elasticsearch:
   url: localhost
   port: 9300
   index: aoc_aop
