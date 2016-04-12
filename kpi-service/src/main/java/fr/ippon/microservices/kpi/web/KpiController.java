@@ -35,7 +35,7 @@ public class KpiController {
 		return kpiSearchService.getNbImport();
 	}
 	
-	@RequestMapping(method = RequestMethod.GET, vaddlue = "/stats/{dept}/nbCommunes")
+	@RequestMapping(method = RequestMethod.GET, value = "/stats/{dept}/nbCommunes")
 	public long getStatsNbCommunes(@PathVariable String dept) throws Exception {
 		return kpiSearchService.nbCommunes(dept);
 	}
