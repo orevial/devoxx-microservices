@@ -1,0 +1,99 @@
+#suggestion-form input[type=text] {
+    height: 30px;
+    font-size: 20px;
+}
+
+#suggestion-input {
+    width: 300px;
+}
+
+#launch-search-btn {
+    width: 120px;
+    height: 35px;
+    font-size: 17px;
+}
+
+#suggester-select {
+    height: 35px;
+    font-size: 20px;
+}
+
+#answer-block {
+    margin-top: 15px;
+}
+
+#answer-results-all-results .suggester-results {
+    width: 24%;
+    margin-right: 1%;
+}
+
+#last-update-time-combined-results,
+#last-update-time-all-results {
+    width: 170px;
+    margin: 13px 0px;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    border: red 1px solid;
+}
+
+.num-results-found {
+    margin: 13px 0px;
+    padding: 5px;
+    font-size: 15px;
+    border: red 1px solid;
+}
+
+.suggestions-found {
+    margin-top: 15px;
+}
+
+.suggestion {
+    clear: both;
+}
+
+.suggestion .suggester-name,
+.suggestion .weight {
+    margin-right: 10px;
+    padding-right: 10px;
+    border-right: 1px solid red;
+}
+
+.suggestion .suggester-name {
+    width: 125px;
+    text-align: center;
+}
+.suggestion .weight {
+    width: 45px;
+    font-weight: bold;
+    text-align: right;
+}
+
+
+/* --- PRODUCT FINDER --- */
+form,
+#offers-container {
+    margin: 10px;
+}
+
+.table th {
+    text-align: center;
+}
+
+.table td {
+    text-align: center;
+}
+
+
+/* VARIOUS */
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
