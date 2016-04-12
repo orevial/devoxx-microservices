@@ -1,0 +1,17 @@
+spring:
+  application.name: services-gateway
+  cloud:
+    zookeeper:
+      connect-string: localhost:2181
+
+server.port: 22000
+
+# Disable Eureka
+ribbon.eureka.enabled: false
+eureka.client.enabled: false
+
+zuul:
+  routes:
+    searcher-service: /search/**
+    kpi-service: /kpi/**
+    loader-service: /load/**
