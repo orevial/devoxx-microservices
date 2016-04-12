@@ -4,17 +4,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>fr.ippon.microservices</groupId>
-    <artifactId>searcher-service</artifactId>
-    <name>Searcher service</name>
-    <description>A Spring Boot service that searches documents on an ElasticSearch</description>
-    <version>1.0-SNAPSHOT</version>
-
     <parent>
         <groupId>fr.ippon.microservices</groupId>
         <artifactId>services-parent</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
+
+    <artifactId>searcher-service</artifactId>
+    <name>Searcher service</name>
+    <description>A Spring Boot service that searches documents on an ElasticSearch</description>
 
     <dependencies>
         <dependency>
