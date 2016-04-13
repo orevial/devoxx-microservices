@@ -1,0 +1,13 @@
+curl -X POST 'localhost:9200/aoc_aop/_suggest?pretty' -d '{
+    "communes-suggest" : {
+        "text" : "n",
+        "completion" : {
+            "field" : "departement"
+        }
+    }
+}'
+
+curl -XGET 'http://localhost:9200/aoc_aop/commune/1'
+
+curl -XGET 'http://localhost:9200/aoc_aop/_search?q=departement:ain'
+

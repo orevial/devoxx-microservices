@@ -2,7 +2,6 @@ package fr.ippon.microservices.kpi.web;
 
 import javax.inject.Inject;
 
-import org.elasticsearch.search.SearchHits;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,7 +11,6 @@ import fr.ippon.microservices.kpi.service.KpiLoaderService;
 import fr.ippon.microservices.kpi.service.KpiSearchService;
 
 @RestController
-@RequestMapping("/kpi/")
 public class KpiController {
 
 	@Inject

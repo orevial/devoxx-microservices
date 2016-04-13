@@ -16,7 +16,7 @@ import javax.inject.Inject;
 
 @Configuration
 @EnableDiscoveryClient
-public class Config {
+public class LoaderConfig {
 
 	@Inject
 	private ESSettings esSettings;

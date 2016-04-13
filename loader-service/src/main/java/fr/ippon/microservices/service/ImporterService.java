@@ -63,12 +63,12 @@ public class ImporterService {
 			boolean commitPreviousCommune = false;
 			for (Document commune : communesCursor) {
 
-				MongoCommuneAire currentMongoCommuneAire = mapper.readValue(commune.toJson(), MongoCommuneAire.class);
+				MongoCommuneAire currentCommuneAire = mapper.readValue(commune.toJson(), MongoCommuneAire.class);
 
-				if (currentCommune == null || !previousCommune.getCi().equals(currentMongoCommuneAire.getCi())) {
-					currentCommune = new ESCommuneDocument(currentMongoCommuneAire.getArt(),
-							currentMongoCommuneAire.getCi(), currentMongoCommuneAire.getDepartement().toLowerCase(),
-							currentMongoCommuneAire.getCommune());
+				if (currentCommune == null || !previousCommune.getCi().equals(currentCommuneAire.getCi())) {
+					currentCommune = new ESCommuneDocument(currentCommuneAire.getArt(),
+							currentCommuneAire.getCi(), currentCommuneAire.getDepartement().toLowerCase(),
+							currentCommuneAire.getCommune());
 					if (previousCommune != null) {
 						commitPreviousCommune = true;
 					}
@@ -78,8 +78,10 @@ public class ImporterService {
 					// Fetch all products from other Mongo collection
 					BasicDBObject productsSort = new BasicDBObject("produit", 1);
 					BasicDBObject productsQuery = new BasicDBObject("ida",
-							Integer.valueOf(currentMongoCommuneAire.getIda()));
-					FindIterable<Document> productsCursor = airesProduitsCollection.find(productsQuery).sort(productsSort);
+							Integer.valueOf(currentCommuneAire.getIda()));
+					FindIterable<Document> productsCursor = airesProduitsCollection
+							.find(productsQuery)
+							.sort(productsSort);
 
 					for (Document product : productsCursor) {
 						MongoAireProduit produit = mapper.readValue(product.toJson(), MongoAireProduit.class);
@@ -87,7 +89,7 @@ public class ImporterService {
 								produit.getProduit()));
 					}
 				} catch (NumberFormatException e) {
-					logger.info("Number format exception for : {}", currentMongoCommuneAire.getIda());
+					logger.info("Number format exception for : {}", currentCommuneAire.getIda());
 				} catch (IOException e) {
 					logger.info("IO exception... {}");
 				}

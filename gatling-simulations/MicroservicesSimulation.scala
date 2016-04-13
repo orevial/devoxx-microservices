@@ -33,13 +33,17 @@ class MicroservicesSimulation extends Simulation {
 
   val scn = scenario("Searcher Simulation") // A scenario is a chain of requests and pauses
     .forever {
-		exec(http("request_1")
-		  .get("/kpi/kpi/loader/nbImport"))
-		.pause(1) // Note that Gatling has recorded real time pauses
-		.exec(http("request_2")
-		  .get("/search/search/city/Bordeaux"))
-		.pause(2)
+		exec(http("kpi")
+		  .get("/kpi/loader/nbImport"))
+		.pause(200 milliseconds, 400 milliseconds) // Note that Gatling has recorded real time pauses
+		.exec(http("searchCity")
+		  .get("/search/city/Bordeaux"))
+		.pause(200 milliseconds, 500 milliseconds)
+		.exec(http("searchIda")
+		  .get("/search/ida/graves"))
+		.pause(300 milliseconds, 500 milliseconds)
+		
 	}
 
-  setUp(scn.inject(atOnceUsers(10)).protocols(httpConf))
+  setUp(scn.inject(atOnceUsers(15)).protocols(httpConf))
 }

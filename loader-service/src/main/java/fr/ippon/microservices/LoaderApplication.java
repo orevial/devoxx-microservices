@@ -9,8 +9,8 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan("fr.ippon.microservices")
 @EnableCircuitBreaker
 @SpringBootApplication
-public class Application {
+public class LoaderApplication {
     public static void main(String[] args) throws Exception {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(LoaderApplication.class, args);
     }
 }

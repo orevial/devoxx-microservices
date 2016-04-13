@@ -1,31 +1,37 @@
-{
-         "commune":{
+curl -X DELETE localhost:9200/aoc_aop/
+
+curl -XPUT 'http://localhost:9200/aoc_aop/'
+
+curl -X PUT localhost:9200/aoc_aop/commune/_mapping -d '{
+   "commune":{
+      "properties":{
+         "appellations":{
             "properties":{
-               "appellations":{
-                  "properties":{
-                     "aireGeo":{
-                        "type":"string"
-                     },
-                     "ida":{
-                        "type":"string"
-                     },
-                     "productName":{
-                        "type":"string"
-                     }
-                  }
+               "aireGeo":{
+                  "type":"string",
+                  "analyzer":"french"
                },
-               "art":{
+               "ida":{
                   "type":"string"
                },
-               "ci":{
-                  "type":"string"
-               },
-               "commune":{
-                  "type":"string"
-               },
-               "departement":{
+               "productName":{
                   "type":"string"
                }
             }
+         },
+         "art":{
+            "type":"string"
+         },
+         "commune":{
+            "type":"string",
+            "index":"not_analyzed"
+         },
+         "departement":{
+            "type":"completion",
+            "analyzer":"simple",
+            "search_analyzer":"simple",
+            "payloads":true
          }
       }
+   }
+}'
