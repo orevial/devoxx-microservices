@@ -1,0 +1,7 @@
+spring:
+  application.name: services-dashboard
+  cloud:
+    zookeeper:
+      connect-string: localhost:2181
+
+server.port: 20040
