@@ -343,18 +343,19 @@ html.rightbanner body {
 
 
 /* intro slides */
-html.intro .slides {
+html.intro .slides,
+html.conclusion .slides {
   background-image: url("../../background_1280_720_HD.jpg"); }
 
 html.intro .reveal .slides section h1, html.intro .reveal .slides section h2 {
   padding-top: 12%;
   padding-left: 6%;
   padding-right: 6%;
-  text-align: left;
+  /*text-align: left;*/
   border-bottom: none; }
 
 html.intro .reveal .slides section p {
-  text-align: left;
+  /*text-align: left;*/
   margin-left: 12%;
   margin-right: 12%; }
 
@@ -430,3 +431,122 @@ html.light .footer p {
 
 .slides .fourth {
   color: #10001a; }
+
+
+/* Presentation custom CSS */
+.left {
+    float: left;
+    width: 50%;
+}
+
+.reveal div.left {
+    font-size: 90%;
+}
+
+.reveal section img.avatar {
+    width: 130px;
+    margin: 15px 40px;
+}
+
+img.ippontech {
+    position: absolute;
+    right: 90px;
+    bottom: 100px;
+}
+
+.reveal .slides .center {
+    text-align: center;
+}
+
+img.small {
+    width: 60%;
+}
+
+img.medium {
+    width: 85%;
+}
+
+.quote-author {
+    text-align: center;
+    font-style: italic;
+}
+
+.full-width {
+    width: 100%;
+}
+
+img.zookeeperwarning {
+    width: 200px;
+    position: absolute;
+    right: 90px;
+    bottom: -100px;
+}
+
+.reveal section img.zookeeperwarning {
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+.reveal .our-code {
+    box-shadow: none;
+    line-height: 1.5em;
+}
+
+.reveal .our-code code {
+    font-size: 30px;
+}
+
+.reveal img.full-width {
+    max-width: 100%;
+}
+
+.reveal section img.circuit-breaker {
+    background-color: rgba(255, 255, 255, 0.9);
+    height: 500px;
+}
+
+.reveal section img.wiremock {
+    padding: 35px;
+}
+
+.reveal section img.springstack {
+    padding: 20px;
+    height: 480px;
+}
+
+img.usecase2 {
+    width: 66%;
+}
+
+.reveal section img.continuousdelivery2 {
+    position: absolute;
+    left: 3.1%;
+}
+
+
+.reveal section img.spinnaker-pipelines {
+    height: 500px;
+}
+
+.reveal section.last-slide table {
+    border: none;
+    font-size: 50%;
+}
+.reveal section.last-slide table td {
+    vertical-align: middle;
+    border: none;
+}
+.reveal section.last-slide table td.align-left {
+    text-align: right;
+}
+
+.reveal section.last-slide table img {
+    text-align: right;
+    max-width: 150px;
+    text-align: right;
+    max-height: 50px;
+    margin: 0;
+    background: none;
+}
+
