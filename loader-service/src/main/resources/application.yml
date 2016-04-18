@@ -4,7 +4,7 @@ spring:
     zookeeper:
       connect-string: localhost:2181
 
-server.port: 21000
+server.port: ${random.int[21000,22000]}
 
 mongo:
   uri: mongodb://localhost:27017/aoc_aop?authSource=admin

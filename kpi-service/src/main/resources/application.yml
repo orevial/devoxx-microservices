@@ -6,7 +6,7 @@ spring:
       discovery:
         enabled: true
 
-server.port: 21001
+server.port: ${random.int[21000,22000]}
 
 elasticsearch:
   url: localhost

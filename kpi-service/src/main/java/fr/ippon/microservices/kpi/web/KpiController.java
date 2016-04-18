@@ -1,17 +1,23 @@
 package fr.ippon.microservices.kpi.web;
 
-import javax.inject.Inject;
-
+import fr.ippon.microservices.kpi.service.KpiLoaderService;
+import fr.ippon.microservices.kpi.service.KpiSearchService;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import fr.ippon.microservices.kpi.service.KpiLoaderService;
-import fr.ippon.microservices.kpi.service.KpiSearchService;
+import javax.inject.Inject;
 
 @RestController
 public class KpiController {
+
+	@Value("${spring.application.name:}")
+	private String appName;
+
+	@Value("${server.port:-1}")
+	private int serverPort;
 
 	@Inject
 	private KpiLoaderService kpiLoaderService;
@@ -36,5 +42,10 @@ public class KpiController {
 	@RequestMapping(method = RequestMethod.GET, value = "/stats/{dept}/nbCommunes")
 	public long getStatsNbCommunes(@PathVariable String dept) throws Exception {
 		return kpiSearchService.nbCommunes(dept);
+	}
+
+	@RequestMapping(method = RequestMethod.GET, value = "/whoami")
+	public String whoAmI() {
+		return "I am the " + appName.replace("-", " ").toUpperCase() + ", running on port " + serverPort;
 	}
 }

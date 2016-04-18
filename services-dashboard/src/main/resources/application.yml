@@ -4,4 +4,4 @@ spring:
     zookeeper:
       connect-string: localhost:2181
 
-server.port: 20040
+server.port: 23000

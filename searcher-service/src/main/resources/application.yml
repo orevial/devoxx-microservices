@@ -4,7 +4,7 @@ spring:
     zookeeper:
       connect-string: localhost:2181
 
-server.port: 21002
+server.port: ${random.int[21000,22000]}
 
 elasticsearch:
   url: localhost
