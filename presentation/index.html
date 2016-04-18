@@ -87,7 +87,7 @@
                 <section>
                     <h2>Ippon Technologies</h2>
                     <ul>
-                        <li>200 ingénieurs en France et aux USA
+                        <li>220 ingénieurs en France et aux USA
                             <ul>
                                 <li>Paris, Nantes, Bordeaux</li>
                                 <li>Richmond (Virginie), Washington (DC)</li>
@@ -112,9 +112,9 @@
                 <section>
                     <h2>Le projet</h2>
                     <ul>
-                        <li>Component Team en charge du moteur de recherche d’un site de e-commerce</li>
+                        <li>Component Team en charge du moteur de recherche d’un site e-commerce</li>
                         <li>Architecture de microservices pour alimenter, interroger et monitorer les composants du moteur</li>
-                        <li>Projet multi plateformes et multilingue (multi tenants)</li>
+                        <li>Projet multi-plateformes et multi-lingue (multi-tenants)</li>
                         <li>Démarrage début 2015, déploiement s’étendant maintenant à d’autres équipes</li>
                     </ul>
                 </section>
@@ -123,11 +123,11 @@
                     <div class="left">
                         <img src="images/cartegaulesmall.png">
                     </div>
-                    <div class="left">
-                        <p>Historiquement environnement full Microsoft :</p>
-                        <p>.Net</p>
-                        <p>SQL Server</p>
-                        <p>Windows Server</p>
+                    <div>
+                        <p class="center">Historiquement environnement full Microsoft :</p>
+                        <p class="center">.Net</p>
+                        <p class="center">SQL Server</p>
+                        <p class="center">Windows Server</p>
                     </div>
                 </section>
                 <section class="contexttechno center">
@@ -153,7 +153,7 @@
                     <h2>Une définition</h2>
                     <br />
                     <br />
-                    <blockquote>“Les microservices sont définis comme un architecture de services faiblement couplés avec des contextes fonctionnels définis.”</blockquote>
+                    <blockquote>“Les microservices sont définis comme une architecture de services faiblement couplés avec des contextes fonctionnels définis.”</blockquote>
                     <p class="quote-author">Adrian Cockroft</p>
                 </section>
                 <section>
@@ -214,7 +214,7 @@
                     <h2>Discovery avec Zookeeper</h2>
                     <ul>
                         <li>Réserver des ressources dédiées</li>
-                        <li>Isolation des instances pour les services</li>
+                        <li>Isoler des instances pour les services</li>
                         <li>Bien utiliser le mécanisme de Curator (ServiceInstance)</li>
                         <li>Marquer les instances “Down”</li>
                         <li>Système CP</li>
@@ -226,20 +226,15 @@
                 <section>
                     <h2>Problème : Multi-tenancy (1)</h2>
                     <p>Tenant specific :</p>
-                    <pre class="our-code">
-                        <code>/discovery/tenants/
+                    <pre class="our-code"><code>/discovery/tenants/
                   /fr/
                      /kpi-service/...
                      /loader-service/...
                   /be/
                      /kpi-service/...
-                     /loader-service/…
-                        </code>
-                    </pre>
+                     /loader-service/...</code></pre>
                     <p>Multi tenant :</p>
-                    <pre class="our-code">
-                        <code>/discovery/notenant/monitoring-agent/...</code>
-                    </pre>
+                    <pre class="our-code"><code>/discovery/notenant/monitoring-agent/...</code></pre>
                 </section>
                 <section class="center">
                     <h2>Tolérance aux pannes avec le circuit breaker</h2>
