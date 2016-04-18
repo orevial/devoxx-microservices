@@ -23,8 +23,10 @@ curl -X PUT localhost:9200/aoc_aop/commune/_mapping -d '{
             "type":"string"
          },
          "commune":{
-            "type":"string",
-            "index":"not_analyzed"
+            "type":"completion",
+            "analyzer":"simple",
+            "search_analyzer":"simple",
+            "payloads":true
          },
          "departement":{
             "type":"completion",

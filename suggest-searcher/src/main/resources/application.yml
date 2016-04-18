@@ -1,0 +1,12 @@
+spring:
+  application.name: suggest-searcher
+  cloud:
+    zookeeper:
+      connect-string: localhost:2181
+
+server.port: ${random.int[21000,22000]}
+
+elasticsearch:
+  url: localhost
+  port: 9300
+  index: aoc_aop

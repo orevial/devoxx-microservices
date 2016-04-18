@@ -16,3 +16,4 @@ zuul:
     searcher-service: /search/**
     kpi-service: /kpi/**
     loader-service: /load/**
+    suggest-searcher: /suggest/**

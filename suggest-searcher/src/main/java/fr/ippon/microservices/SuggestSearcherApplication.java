@@ -6,8 +6,9 @@ import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 
 @EnableCircuitBreaker
 @SpringBootApplication
-public class SearcherApplication {
-	public static void main(String[] args) throws Exception {
-		SpringApplication.run(SearcherApplication.class, args);
+public class SuggestSearcherApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SuggestSearcherApplication.class, args);
 	}
 }
