@@ -42,6 +42,9 @@ class MicroservicesSimulation extends Simulation {
 		.exec(http("searchIda")
 		  .get("/search/ida/graves"))
 		.pause(300 milliseconds, 500 milliseconds)
+		.exec(http("suggestDept")
+		  .get("/suggest/dept/p"))
+		.pause(200 milliseconds, 300 milliseconds)
 		
 	}
 
