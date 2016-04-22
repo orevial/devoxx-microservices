@@ -1,6 +1,9 @@
 body {
-	margin:0 20px;	
-	
+    margin: 0 20px;
+}
+
+h1 {
+    margin-left: 40px;
 }
 
 #suggestion-form input[type=text] {
@@ -101,4 +104,29 @@ form,
 
 .clear {
     clear: both;
+}
+
+#suggest {
+    position: absolute;
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCFF;
+    font-size: 90%;
+    width: 200px;
+}
+#suggest div {
+    display: block;
+    width: 200px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+#suggest div.select{ /* keydown, keyup */
+    color: #FFFFFF;
+    background-color: #3366FF;
+}
+#suggest div.over{ /* mouse over */
+    background-color: #99CCFF;
+}
+
+#department-group {
+    display: none;
 }

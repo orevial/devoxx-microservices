@@ -27,7 +27,6 @@ public class SuggestController {
 	@RequestMapping(method = RequestMethod.GET, value = "/city/{city}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<String> searchByCity(@PathVariable String city) throws Exception {
 		return suggestService.searchCity(city);
-		
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, value = "/dept/{dept}", produces = MediaType.APPLICATION_JSON_VALUE)
